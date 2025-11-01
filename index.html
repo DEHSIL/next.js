@@ -21,6 +21,10 @@
             }
         }
 
+        function handleClick() {
+            console.log("increment like count")
+        }
+
         function Header({props}) {
             const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
 
@@ -33,6 +37,7 @@
                 {names.map((elem)=>(
                     <span key={elem}>{elem}</span>
                 ))}
+                <button onClick={handleClick}>Like</button>
                 </div>
                 )
         }
