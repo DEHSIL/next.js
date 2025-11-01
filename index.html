@@ -13,7 +13,7 @@
     <script type="text/jsx">
         const app = document.getElementById('app');
         
-        function CreateTitle({props}) {
+        function createTitle(props) {
             if (props) {
                 return props;
             } else {
@@ -25,7 +25,7 @@
             return (
                 <div>
                 <h1>Develop. Preview. Ship. {props}</h1> 
-                <span><CreateTitle props={props} /></span>;
+                <span>{createTitle(props)}</span>;
                 </div>
                 )
         }
@@ -42,10 +42,6 @@
         }
         const root = ReactDOM.createRoot(app);
         root.render(<HomePage />)
-
-        
-            
-
     </script>
 </body>
 </html>
