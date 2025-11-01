@@ -22,10 +22,17 @@
         }
 
         function Header({props}) {
+            const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
             return (
+                
                 <div>
                 <h1>Develop. Preview. Ship. {props}</h1> 
-                <span>{createTitle(props)}</span>;
+                <span>{createTitle(props)}</span>
+                <br></br>
+                {names.map((elem)=>(
+                    <span key={elem}>{elem}</span>
+                ))}
                 </div>
                 )
         }
@@ -36,6 +43,7 @@
             return ( 
                 <div>
                     {/*test*/}
+                    <Header props={''}  />
                     <Header props={name}  />
                 </div>
             )
