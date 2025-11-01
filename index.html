@@ -11,6 +11,7 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script type="text/jsx">
+        
         const app = document.getElementById('app');
         
         function createTitle(props) {
@@ -21,12 +22,15 @@
             }
         }
 
-        function handleClick() {
-            console.log("increment like count")
-        }
+        
 
         function Header({props}) {
+            const [likes, setLikes] = React.useState(0)
             const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
+            function handleClick() {
+                setLikes(likes+10)
+            }
 
             return (
                 
@@ -37,7 +41,7 @@
                 {names.map((elem)=>(
                     <span key={elem}>{elem}</span>
                 ))}
-                <button onClick={handleClick}>Like</button>
+                <button onClick={handleClick}>Like({likes})</button>
                 </div>
                 )
         }
